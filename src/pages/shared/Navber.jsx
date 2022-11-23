@@ -151,7 +151,11 @@ const Navber = () => {
     <div className='sticky top-0'>
       <div className="px-14 py-5 w-full bg-white shadow-lg">
         <div className="relative flex items-center justify-between">
-        <div className='flex items-center'>
+        <div className='flex items-center text-black'>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />
+</svg>
+
         <h1 className='text-xl ml-2 font-bold uppercase text-blue-600'>Relic book</h1>
         </div>
           <div className='hidden md:block'>
@@ -184,8 +188,11 @@ const Navber = () => {
                 <div className="p-5 bg-white border rounded shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                    <div className='flex items-center'>
-        
+                    <div className='flex items-center text-black'>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />
+</svg>
+
         <h1 className='text-xl ml-2 font-semibold'>Relic book</h1>
         </div>
                     </div>
