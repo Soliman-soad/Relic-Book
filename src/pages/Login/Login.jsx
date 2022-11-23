@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ProfileContext } from '../context/UserContext';
-import { useTitle } from '../custom-Hooks/useTitle';
+import { ProfileContext } from '../../context/UserContext';
 
 const Login = () => {
-	useTitle('Login')
+	// useTitle('Login')
     const {logIn,popUpSignIn}=useContext(ProfileContext)
     const navigate = useNavigate()
 	const location = useLocation()
@@ -66,12 +65,9 @@ const Login = () => {
 		.catch(error => console.log(error))
 	}
     return (
-        <div className='w-full h-screen bg-blue-400 shadow-lg pt-8'>
-      <div className='flex bg-white w-8/12 mx-auto items-center rounded-md'>
-      <div className='hidden md:block lg:block'>
-        <img className='w-full'  alt='' src='https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7962.jpg?w=740&t=st=1667924735~exp=1667925335~hmac=5cba889e31e5e4fa99cbc221893fcbe60e088712ed311248a631b1722ba37e23'/>
-      </div>
-      <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto bg-white my-auto text-gray-900">
+        <div >
+      <div className='mx-auto items-center rounded-md'>
+      <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto shadow-lg mt-10">
 	<h1 className="text-2xl font-bold text-center text-gray-900">Login</h1>
 	<form onSubmit={handleLogIn} className="space-y-6 ng-untouched ng-pristine ng-valid">
 		
@@ -86,7 +82,7 @@ const Login = () => {
                 <p>{errorMessage}</p>
 			</div>
 		</div>
-		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-blue-500 text-white font-bold">Sign in</button>
+		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-teal-600 text-white font-bold">Sign in</button>
 	</form>
 	<div className="flex items-center pt-4 space-x-1">
 		<div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>

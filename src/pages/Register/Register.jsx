@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ProfileContext } from '../context/UserContext';
-import { useTitle } from '../custom-Hooks/useTitle';
+import { ProfileContext } from '../../context/UserContext';
+// import { useTitle } from '../custom-Hooks/useTitle';
 
 const Register = () => {
-	useTitle('Register')
+	// useTitle('Register')
     const {register,changeProfile,popUpSignIn}=useContext(ProfileContext)
     const navigate = useNavigate()
 	const location = useLocation()
