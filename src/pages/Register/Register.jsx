@@ -75,12 +75,9 @@ const Register = () => {
 		.catch(error => console.log(error))
 	}
     return (
-        <div className='w-full h-screen bg-blue-400 shadow-lg pt-5'>
-      <div className='flex bg-white w-8/12 mx-auto items-center rounded-md '>
-      <div className='hidden md:block lg:block'>
-        <img className='w-full'  alt='' src='https://img.freepik.com/free-vector/login-concept-illustration_114360-757.jpg?w=740&t=st=1667929148~exp=1667929748~hmac=3bf3a4d3d321efd94d4016a4406a9782c3d1fb68d2e848c3275e4bb7e4f8d7ac'/>
-      </div>
-      <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto bg-white my-auto text-gray-900">
+        <div>
+      <div className=' mx-auto items-center rounded-md '>
+      <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto shadow-lg mt-10">
 	<h1 className="text-2xl font-bold text-center text-gray-900">Register</h1>
 	<form onSubmit={handleRegister} className="space-y-6 ng-untouched ng-pristine ng-valid">
 		<div className="space-y-1 text-sm">
@@ -102,7 +99,7 @@ const Register = () => {
                 <p>{errorMessage}</p>
 			</div>
 		</div>
-		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-blue-500 text-white font-bold">Register</button>
+		<button type='submit' className="block w-full p-3 text-center rounded-sm   bg-teal-600 text-white font-bold">Register</button>
 	</form>
 	<div className="flex items-center pt-4 space-x-1">
 		<div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
