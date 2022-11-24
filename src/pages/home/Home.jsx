@@ -1,4 +1,5 @@
 import React from 'react';
+import Category from '../shared/Category';
 import Advertise from './Advertise';
 import Slider from './Slider';
 
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Slider/>
             <Advertise/>
+            <Category/>
         </div>
     );
 };
