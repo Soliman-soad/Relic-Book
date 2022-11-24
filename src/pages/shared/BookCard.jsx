@@ -65,7 +65,7 @@ const BookCard = ({book}) => {
 		</div>
 		<div className="space-y-1 text-sm">
     <label htmlFor='location' className='font-bold'>Location</label>
-			<input type="text" name="location" id="location" defaultValue={book?.Location} className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
+			<input type="text" name="location" id="location"  placeholder='Meeting location' className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
 		</div>
 		
 		

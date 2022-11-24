@@ -10,6 +10,23 @@ const Register = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const [errorMessage, setErrorMessage] = useState(null);
+  const userData = (user,role) => {
+    const currentUser ={
+      user: user,
+      role:role
+    }
+    fetch('http://localhost:5000/user',{
+				method:'POST',
+				headers:{
+					'content-type':'application/json'
+				},
+				body: JSON.stringify(currentUser)
+			})
+			.then(res=> res.json())
+			.then(data => {
+				console.log(data)
+			})
+  }
   const handleRegister = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -22,6 +39,7 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         update(name, img);
+        userData(user,role)
         // const currentUser = {
         //   user: user.email,
         // };
@@ -55,6 +73,7 @@ const Register = () => {
     popUpSignIn()
       .then((result) => {
         const user = result.user;
+        userData(user,"buyer")
         // const currentUser = {
         //   user: user.email,
         // };
