@@ -17,26 +17,28 @@ const Register = () => {
     const name = event.target.name.value;
     const img = event.target.img.value;
     const role = event.target.role.value;
+    console.log(role)
     register(email, password)
       .then((result) => {
         const user = result.user;
-        update(name, img, role);
-        const currentUser = {
-          user: user.email,
-        };
-        fetch("https://sidekick-server-soliman-soad.vercel.app/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(currentUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            localStorage.setItem("token", data.token);
-            navigate(from, { replace: true });
-          });
+        update(name, img);
+        // const currentUser = {
+        //   user: user.email,
+        // };
+        // fetch("https://sidekick-server-soliman-soad.vercel.app/jwt", {
+        //   method: "POST",
+        //   headers: {
+        //     "content-type": "application/json",
+        //   },
+        //   body: JSON.stringify(currentUser),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //     localStorage.setItem("token", data.token);
+        //     navigate(from, { replace: true });
+        //   });
+        console.log(user)
       })
       .catch((error) => {
         console.error(error);
@@ -53,22 +55,23 @@ const Register = () => {
     popUpSignIn()
       .then((result) => {
         const user = result.user;
-        const currentUser = {
-          user: user.email,
-        };
-        fetch("https://sidekick-server-soliman-soad.vercel.app/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(currentUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            localStorage.setItem("token", data.token);
-            navigate(from, { replace: true });
-          });
+        // const currentUser = {
+        //   user: user.email,
+        // };
+        // fetch("https://sidekick-server-soliman-soad.vercel.app/jwt", {
+        //   method: "POST",
+        //   headers: {
+        //     "content-type": "application/json",
+        //   },
+        //   body: JSON.stringify(currentUser),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //     localStorage.setItem("token", data.token);
+        //     navigate(from, { replace: true });
+        //   });
+        console.log(user)
       })
       .catch((error) => console.log(error));
   };
@@ -125,12 +128,12 @@ const Register = () => {
                 className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-200 text-gray-900  "
               />
               <div className="flex justify-end text-xs text-gray-900">
-                <p>{errorMessage}</p>
+                <p className="text-red-600">{errorMessage}</p>
               </div>
             </div>
             <button
               type="submit"
-              className="block w-full p-3 text-center rounded-sm   bg-teal-600 text-white font-bold"
+              className="block w-full p-3 text-center rounded-sm   bg-sky-600 btn border-none text-white font-bold"
             >
               Register
             </button>

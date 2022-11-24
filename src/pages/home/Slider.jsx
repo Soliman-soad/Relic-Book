@@ -13,15 +13,15 @@ const Slider = () => {
       };
     return (
         <div className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col lg:flex-row-reverse">
+  <div className="hero-content grid grid-cols-1 lg:grid-cols-2 ">
   <Lottie options={defaultOptions}
               height={500}
               width={500}
               />
     <div>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
+      <h1 className="text-5xl font-bold">Buy or sell book</h1>
+      <p className="py-6 w-1/2">Discover millions of copies of gently used books for sale from sellers around the world. By choosing to shop for used books, you can save money, be sustainable, support independent booksellers, and have access to an unbeatable selection of literature from the past.</p>
+      <button className="btn bg-sky-600 border-none">Get your book now</button>
     </div>
   </div>
 </div>

@@ -18,22 +18,23 @@ const Login = () => {
         logIn(email,password)
         .then(result => {
             const user = result.user;
-			const currentUser ={
-				user: user.email
-			}
-            fetch('https://sidekick-server-soliman-soad.vercel.app/jwt',{
-				method:'POST',
-				headers:{
-					'content-type':'application/json'
-				},
-				body: JSON.stringify(currentUser)
-			})
-			.then(res=> res.json())
-			.then(data => {
-				console.log(data)
-				localStorage.setItem('token',data.token)
-				navigate(from,{replace:true})
-			})
+			// const currentUser ={
+			// 	user: user.email
+			// }
+            // fetch('https://sidekick-server-soliman-soad.vercel.app/jwt',{
+			// 	method:'POST',
+			// 	headers:{
+			// 		'content-type':'application/json'
+			// 	},
+			// 	body: JSON.stringify(currentUser)
+			// })
+			// .then(res=> res.json())
+			// .then(data => {
+			// 	console.log(data)
+			// 	localStorage.setItem('token',data.token)
+			// 	navigate(from,{replace:true})
+			// })
+			console.log(user)
         })
         .catch(error => {
             console.error(error);
@@ -45,22 +46,23 @@ const Login = () => {
 		popUpSignIn()
 		.then(result =>{
 			const user =result.user;
-			const currentUser ={
-				user: user.email
-			}
-			fetch('https://sidekick-server-soliman-soad.vercel.app/jwt',{
-				method:'POST',
-				headers:{
-					'content-type':'application/json'
-				},
-				body: JSON.stringify(currentUser)
-			})
-			.then(res=> res.json())
-			.then(data => {
-				console.log(data)
-				localStorage.setItem('token',data.token)
-				navigate(from,{replace:true})
-			})
+			// const currentUser ={
+			// 	user: user.email
+			// }
+			// fetch('https://sidekick-server-soliman-soad.vercel.app/jwt',{
+			// 	method:'POST',
+			// 	headers:{
+			// 		'content-type':'application/json'
+			// 	},
+			// 	body: JSON.stringify(currentUser)
+			// })
+			// .then(res=> res.json())
+			// .then(data => {
+			// 	console.log(data)
+			// 	localStorage.setItem('token',data.token)
+			// 	navigate(from,{replace:true})
+			// })
+			console.log(user)
 		})
 		.catch(error => console.log(error))
 	}
