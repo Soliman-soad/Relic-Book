@@ -17,7 +17,7 @@ const Advertise = () => {
             </div>
             <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 m-5'>
                 {
-                    books.map(book => <BookCard key={book._id} service={book}></BookCard>)
+                    books.map(book => <BookCard key={book._id} book={book}></BookCard>)
                 }
                 </div>
         </div>
