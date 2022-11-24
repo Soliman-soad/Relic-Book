@@ -10,9 +10,9 @@ const Register = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const [errorMessage, setErrorMessage] = useState(null);
-  const userData = (user,role) => {
+  const userData = (email,role) => {
     const currentUser ={
-      user: user,
+      email: email,
       role:role
     }
     fetch('http://localhost:5000/user',{
@@ -39,7 +39,7 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         update(name, img);
-        userData(user,role)
+        userData(email,role)
         // const currentUser = {
         //   user: user.email,
         // };
@@ -73,7 +73,7 @@ const Register = () => {
     popUpSignIn()
       .then((result) => {
         const user = result.user;
-        userData(user,"buyer")
+        userData(user.email,"buyer")
         // const currentUser = {
         //   user: user.email,
         // };
