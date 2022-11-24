@@ -6,6 +6,7 @@ import Main from "../pages/layout/Main";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import AddProduct from "../pages/sellerPages/AddProduct";
+import MyProduct from "../pages/sellerPages/MyProduct";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path:'books',
                 element:<AllBooks/>
+            },
+            {
+                path: 'myProduct',
+                element:<MyProduct/>
             }
         ]
     }

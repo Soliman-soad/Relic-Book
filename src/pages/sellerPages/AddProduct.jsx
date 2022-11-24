@@ -34,7 +34,8 @@ const AddProduct = () => {
             posted:time,
             sellerName:seller,
             usedYear:usedYear,
-            condition:condition
+            condition:condition,
+            email: user.email
         }
 
         fetch(`http://localhost:5000/books`,{
