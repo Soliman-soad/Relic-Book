@@ -5,7 +5,7 @@ import { ProfileContext } from '../../context/UserContext';
 
 const Navber = () => {
     let activeStyle = {
-        background: 'blue',
+        background: '#0284c7',
         color:'white',
         padding:'6px',
         borderRadius: '8px'
@@ -100,7 +100,7 @@ const Navber = () => {
     </div>      
           <button
             onClick={signOut}
-            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide hover:bg-blue-500 hover:text-white text-blue-500 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+            className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
             aria-label="Register"
             title="Register"
           >
@@ -148,7 +148,7 @@ const Navber = () => {
         .catch(err=>console.log(err))
     }
   return (
-    <div className='sticky top-0'>
+    <div >
       <div className="px-14 py-5 w-full bg-white shadow-lg">
         <div className="relative flex items-center justify-between">
         <div className='flex items-center text-black'>
@@ -156,7 +156,7 @@ const Navber = () => {
   <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />
 </svg>
 
-        <h1 className='text-xl ml-2 font-bold uppercase text-blue-600'>Relic book</h1>
+        <h1 className='text-xl ml-2 font-bold uppercase text-sky-600'>Relic book</h1>
         </div>
           <div className='hidden md:block'>
             <NavItem/>
