@@ -1,4 +1,3 @@
-import userEvent from '@testing-library/user-event';
 import React, { useContext, useEffect, useState } from 'react';
 import { ProfileContext } from '../../context/UserContext';
 
@@ -19,6 +18,7 @@ const MyProduct = () => {
     <thead>
       <tr>
         <th></th>
+        <th>image</th>
         <th>Name</th>
         <th>Date</th>
         <th>Action</th>
@@ -29,6 +29,7 @@ const MyProduct = () => {
       { product.length ===0 ?<h1 className='text-center w-full'>No product</h1> :
         product.map((p,index) => <tr key={index}>
             <th>{index+1}</th>
+            <td>{p?.img}</td>
             <td>{p?.name}</td>
             <td>{p?.time}</td>
             <td>

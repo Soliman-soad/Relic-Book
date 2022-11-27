@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const AdminDashboard = () => {
     return (
@@ -16,14 +16,16 @@ const AdminDashboard = () => {
   <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
   </div>
 </div>
+<Outlet/>
   </div> 
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
     <ul className="menu p-4 w-80  bg-gray-100 font-bold ">
     <h1 className="text-2xl py-5">Dashboard</h1> 
-      <li><NavLink>All sellers</NavLink></li>
-      <li><NavLink>All buyers </NavLink></li>
-      <li><NavLink>Reported items</NavLink></li>
+      <li><NavLink to='' end>Profile</NavLink></li>
+      <li><NavLink to='allSellers'>All sellers</NavLink></li>
+      <li><NavLink to='allBuyers'>All buyers </NavLink></li>
+      <li><NavLink to='reported'>Reported items</NavLink></li>
     </ul>
   
   </div>
