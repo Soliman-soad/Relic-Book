@@ -22,7 +22,8 @@ const SellerDashboard = () => {
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
     <ul className="menu p-4 w-80  bg-gray-100 font-bold ">
     <h1 className="text-2xl py-5">Dashboard</h1> 
-      <li><NavLink to='' end>My product</NavLink></li>
+      <li><NavLink to='' end>Profile</NavLink></li>
+      <li><NavLink to='myProduct' >My product</NavLink></li>
       <li><NavLink to='addProduct'>Add a product</NavLink></li>
     </ul>
   
