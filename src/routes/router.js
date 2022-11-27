@@ -10,40 +10,43 @@ import AddProduct from "../pages/sellerPages/AddProduct";
 import MyProduct from "../pages/sellerPages/MyProduct";
 
 const router = createBrowserRouter([
-    {
-        path:'/',
-        element:<Main/>,
-        errorElement:<ErrorPage/>,
-        children:[
-            {
-                path:'/',
-                element:<Home/>
-            },
-            {
-                path:'login',
-                element:<Login/>
-            },
-            {
-                path:'register',
-                element:<Register/>
-            },
-            {
-                path:'addProduct',
-                element:<AddProduct/>
-            },
-            {
-                path:'books',
-                element:<AllBooks/>
-            },
-            {
-                path: 'myProduct',
-                element:<MyProduct/>
-            },
-            {
-                path:'dashboard',
-                element:<Dashboard/>
-            }
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <Main />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+      {
+        path: "books",
+        element: <AllBooks />,
+      },
+
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+        children: [
+          {
+            path: "addProduct",
+            element: <AddProduct />,
+          },
+          {
+            path: "",
+            element: <MyProduct />,
+          },
+        ],
+      },
+    ],
+  },
+]);
 export default router;

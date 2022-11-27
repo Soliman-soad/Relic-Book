@@ -19,7 +19,7 @@ const AdminDashboard = () => {
   </div> 
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-    <ul className="menu p-4 w-80 bg-sky-600 font-bold text-white">
+    <ul className="menu p-4 w-80  bg-gray-100 font-bold ">
     <h1 className="text-2xl py-5">Dashboard</h1> 
       <li><NavLink>All sellers</NavLink></li>
       <li><NavLink>All buyers </NavLink></li>
