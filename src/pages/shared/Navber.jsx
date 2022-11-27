@@ -54,7 +54,7 @@ const Navber = () => {
         </li>
         <li>
           <NavLink
-            to="/profile"
+            to="/dashboard"
             style={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
@@ -62,7 +62,7 @@ const Navber = () => {
             title="About us"
             className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
           >
-            Profile
+            Dashboard
           </NavLink>
         </li>
         <li>
