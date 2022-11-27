@@ -1,14 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Sellers = () => {
-
+    const[delt, setDelt] =useState(true);
     const [sellers, setSellers] = useState([])
     useEffect(()=>{
         fetch('http://localhost:5000/sellers')
         .then(res=>res.json())
         .then(data => setSellers(data))
-    },[])
-    console.log(sellers)
+    },[delt])
+    const deleteUser = (id) => {
+        fetch(`http://localhost:5000/sellers/${id}`,{
+      method:'DELETE'
+    })
+    .then(res => res.json())
+    .then(data =>{
+      console.log(data);
+      toast.error('Review deleted')
+      setDelt(!delt)
+    })
+}
     return (
         <div className="overflow-x-auto">
   <table className="table w-full">
@@ -29,14 +40,14 @@ const Sellers = () => {
             <td>{p?.email}</td>
             <td>{p?.role}</td>
             <td>
-                <button className='btn border-none bg-red-600 text-white mr-4'> Delete</button>
-                <button className='btn border-none bg-orange-500 text-white '> Advertise</button>
+                <button className='btn border-none bg-red-600 text-white' onClick={()=>deleteUser(p._id)}> Delete</button>
             </td>
           </tr>)
       }
       
     </tbody>
   </table>
+  <ToastContainer/>
 </div>
     );
 };
