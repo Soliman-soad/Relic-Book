@@ -6,19 +6,28 @@ import { ProfileContext } from '../../context/UserContext';
 const BookCard = ({book}) => {
 	const {user} = useContext(ProfileContext)
   const navigate = useNavigate()
-  const handleRegister= event =>{
+  const handleCart = (id) =>{
+    const add = {
+      user : user?.email
+    }
+    fetch(`http://localhost:5000/addUser/${id}`,{
+        method:'PATCH',
+        headers:{
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(add)
+      })
+      .then(res => res.json())
+      .then(data=>{
+      console.log(data)
+      toast.success('added to cart')
+      navigate('/dashboard/myOrder')
+    })
+  }
+  const handleRegister= (event) =>{
     event.preventDefault();
-    toast.success('Product sell!', {
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
-      navigate('books')
+    handleCart(book?._id)
+      navigate('/books')
   }
   console.log(book)
   const handleReport = (id) => {
@@ -90,7 +99,7 @@ const BookCard = ({book}) => {
     <label htmlFor='location' className='font-bold'>Location</label>
 			<input type="text" name="location" id="location"  placeholder='Meeting location' className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
 		</div>
-		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-sky-600 text-white font-bold">Confirm</button>
+		<button type='submit' onClick={()=> handleCart(book._id)} className="block w-full p-3 text-center rounded-sm  bg-sky-600 text-white font-bold">Confirm</button>
 	</form>
 		<button  onClick={()=> handleReport(book._id)} className="btn border-none block w-full p-3 text-center rounded-sm  bg-red-600 text-white font-bold">Report</button>
   </div>

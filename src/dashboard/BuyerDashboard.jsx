@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const BuyerDashboard = () => {
     return (
@@ -19,12 +19,14 @@ const BuyerDashboard = () => {
 </label>
   </div>
 </div>
+<Outlet/>
   </div> 
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
     <ul className="menu p-4 w-80 bg-gray-100 font-bold ">
     <h1 className="text-2xl py-5">Dashboard</h1> 
-      <li><NavLink>My Orders</NavLink></li>
+    <li className='my-2'><NavLink to='' end>Profile</NavLink></li>
+      <li className='my-2'><NavLink to='myOrder'>My Orders</NavLink></li>
     </ul>
   
   </div>

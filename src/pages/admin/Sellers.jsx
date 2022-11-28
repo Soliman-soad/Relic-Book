@@ -37,7 +37,7 @@ const verify =(id)=>{
     .then(data=>{
     console.log(data)
     setTick(!tick)
-    toast.error('Verified')
+    toast.done('Verified')
   })
 }
 console.log(sellers)

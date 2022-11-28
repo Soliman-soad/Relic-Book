@@ -5,11 +5,13 @@ import ReportedItem from "../pages/admin/ReportedItem";
 import Sellers from "../pages/admin/Sellers";
 import AllBooks from "../pages/allBooks/AllBooks";
 import Blog from "../pages/Blog";
+import MyBuyingProduct from "../pages/buyerPage/MyBuyingProduct";
 import ErrorPage from "../pages/Error/ErrorPage";
 import Home from "../pages/home/Home";
 import HomeCategory from "../pages/home/HomeCategory";
 import Main from "../pages/layout/Main";
 import Login from "../pages/Login/Login";
+import Payment from "../pages/Payment";
 import Products from "../pages/Products";
 import Profile from "../pages/Profile";
 import Register from "../pages/Register/Register";
@@ -73,6 +75,15 @@ const router = createBrowserRouter([
           {
             path:'reported',
             element:<ReportedItem/>
+          },
+          {
+            path:'myOrder',
+            element:<MyBuyingProduct/>            
+          },
+          {
+            path: '/dashboard/payment/:id',
+            element:<Payment/>,
+            loader: ({params})=> fetch(`http://localhost:5000/payment/${params.id}`)
           }
         ],
       },

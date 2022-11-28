@@ -9,6 +9,23 @@ const Login = () => {
 	const location = useLocation()
   const from = location.state?.from?.pathname || '/';
     const [errorMessage, setErrorMessage] =useState(null)
+	const userData = (email,role) => {
+		const currentUser ={
+		  email: email,
+		  role:role
+		}
+		fetch('http://localhost:5000/user',{
+					method:'POST',
+					headers:{
+						'content-type':'application/json'
+					},
+					body: JSON.stringify(currentUser)
+				})
+				.then(res=> res.json())
+				.then(data => {
+					console.log(data)
+				})
+	  }
     const handleLogIn = event =>{
         event.preventDefault();
         const email = event.target.email.value;
@@ -46,6 +63,7 @@ const Login = () => {
 		popUpSignIn()
 		.then(result =>{
 			const user =result.user;
+			userData(user.email,"buyer")
 			// const currentUser ={
 			// 	user: user.email
 			// }
