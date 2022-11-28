@@ -16,13 +16,13 @@ const Footer = () => {
 		</div>
 		<ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
 			<li>
-				<a href="#">Instagram</a>
+				<a href="https://github.com/Soliman-soad">Github</a>
 			</li>
 			<li>
-				<a href="#">Facebook</a>
+				<a href="https://www.facebook.com/mdsolimanalam.soad.1/">Facebook</a>
 			</li>
 			<li>
-				<a href="#">Twitter</a>
+				<a href="https://www.linkedin.com/in/md-soliman-alam/">LinkedIn</a>
 			</li>
 		</ul>
 	</div>
