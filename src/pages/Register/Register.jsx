@@ -13,7 +13,7 @@ const Register = () => {
       email: email,
       role:role
     }
-    fetch('http://localhost:5000/user',{
+    fetch('https://relic-book-server-soliman-soad.vercel.app/user',{
 				method:'POST',
 				headers:{
 					'content-type':'application/json'
@@ -41,7 +41,7 @@ const Register = () => {
         const currentUser = {
           user: user.email,
         };
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://relic-book-server-soliman-soad.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -75,7 +75,7 @@ const Register = () => {
         const currentUser = {
           user: user.email,
         };
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://relic-book-server-soliman-soad.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",

@@ -8,7 +8,7 @@ const BookCard = ({book}) => {
   const navigate = useNavigate()
   const [owner,setOwner] = useState([])
   useEffect(()=>{
-    fetch(`http://localhost:5000/owner`)
+    fetch(`https://relic-book-server-soliman-soad.vercel.app/owner`)
     .then(res=> res.json())
     .then(data => setOwner(data))
 },[user])
@@ -18,7 +18,7 @@ console.log(current[0])
     const add = {
       user : user?.email
     }
-    fetch(`http://localhost:5000/addUser/${id}`,{
+    fetch(`https://relic-book-server-soliman-soad.vercel.app/addUser/${id}`,{
         method:'PATCH',
         headers:{
           'content-type': 'application/json'
@@ -42,7 +42,7 @@ console.log(current[0])
     const add = {
       reported : true
     }
-    fetch(`http://localhost:5000/reportedBooks/${id}`,{
+    fetch(`https://relic-book-server-soliman-soad.vercel.app/reportedBooks/${id}`,{
         method:'PATCH',
         headers:{
           'content-type': 'application/json'

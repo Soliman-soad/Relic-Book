@@ -83,7 +83,7 @@ const router = createBrowserRouter([
           {
             path: '/dashboard/payment/:id',
             element:<Payment/>,
-            loader: ({params})=> fetch(`http://localhost:5000/payment/${params.id}`)
+            loader: ({params})=> fetch(`https://relic-book-server-soliman-soad.vercel.app/payment/${params.id}`)
           }
         ],
       },

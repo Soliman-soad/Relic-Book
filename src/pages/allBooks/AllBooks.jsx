@@ -4,7 +4,7 @@ import BookCard from '../shared/BookCard';
 const AllBooks = ({category}) => {
     const [books, setBooks] = useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/books?category=${category}`,{
+        fetch(`https://relic-book-server-soliman-soad.vercel.app/books?category=${category}`,{
             headers:{
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }

@@ -13,7 +13,7 @@ const CheckoutForm = ({bookData}) => {
  console.log(bookData)
   useEffect(() => {
 
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://relic-book-server-soliman-soad.vercel.app/create-payment-intent", {
       method: "POST",
       headers: {
          "Content-Type": "application/json"
@@ -71,7 +71,7 @@ const CheckoutForm = ({bookData}) => {
       const add = {
         payment : 'paid' 
       }
-      fetch(`http://localhost:5000/paymentData/${bookData._id}`,{
+      fetch(`https://relic-book-server-soliman-soad.vercel.app/paymentData/${bookData._id}`,{
           method:'PATCH',
           headers:{
             'content-type': 'application/json'

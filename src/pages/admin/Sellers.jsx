@@ -6,12 +6,12 @@ const Sellers = () => {
     const [tick, setTick] = useState(false);
     const [sellers, setSellers] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/sellers')
+        fetch('https://relic-book-server-soliman-soad.vercel.app/sellers')
         .then(res=>res.json())
         .then(data => setSellers(data))
     },[delt,tick])
     const deleteUser = (id) => {
-        fetch(`http://localhost:5000/sellers/${id}`,{
+        fetch(`https://relic-book-server-soliman-soad.vercel.app/sellers/${id}`,{
       method:'DELETE'
     })
     .then(res => res.json())
@@ -26,7 +26,7 @@ const verify =(id)=>{
   const add = {
     tick : tick
   }
-  fetch(`http://localhost:5000/verify/${id}`,{
+  fetch(`https://relic-book-server-soliman-soad.vercel.app/verify/${id}`,{
       method:'PATCH',
       headers:{
         'content-type': 'application/json'

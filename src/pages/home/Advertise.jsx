@@ -6,7 +6,7 @@ import BookCard from '../shared/BookCard';
 const Advertise = () => {
     const [books, setBooks] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/advertiseBooks')
+        fetch('https://relic-book-server-soliman-soad.vercel.app/advertiseBooks')
         .then(res=>res.json())
         .then(data => setBooks(data))
     },[])

@@ -8,7 +8,7 @@ const AddProduct = () => {
     const [category ,setCategory]= useState([])
     const navigate = useNavigate()
     useEffect(()=>{
-        fetch('http://localhost:5000/category')
+        fetch('https://relic-book-server-soliman-soad.vercel.app/category')
         .then(res=>res.json())
         .then(data => setCategory(data))
     },[])
@@ -41,7 +41,7 @@ const AddProduct = () => {
             category: categroies
         }
 
-        fetch(`http://localhost:5000/books`,{
+        fetch(`https://relic-book-server-soliman-soad.vercel.app/books`,{
             method:"POST",
             headers:{
                 "content-type":"application/json"

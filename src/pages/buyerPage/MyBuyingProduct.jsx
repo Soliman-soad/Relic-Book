@@ -10,12 +10,12 @@ const MyBuyingProduct = () => {
     const[delt, setDelt] =useState(true);
     const navigate = useNavigate()
     useEffect(()=>{
-        fetch(`http://localhost:5000/myOrder?user=${user?.email}`)
+        fetch(`https://relic-book-server-soliman-soad.vercel.app/myOrder?user=${user?.email}`)
         .then(res=>res.json())
         .then(data => setBooks(data))
     },[delt])
     const deleteBook = (id) => {
-      fetch(`http://localhost:5000/books/${id}`,{
+      fetch(`https://relic-book-server-soliman-soad.vercel.app/books/${id}`,{
     method:'DELETE'
   })
   .then(res => res.json())
@@ -31,7 +31,7 @@ const MyBuyingProduct = () => {
       const add = {
         advertise : true
       }
-      fetch(`http://localhost:5000/books/${id}`,{
+      fetch(`https://relic-book-server-soliman-soad.vercel.app/books/${id}`,{
           method:'PATCH',
           headers:{
             'content-type': 'application/json'

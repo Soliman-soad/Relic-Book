@@ -5,7 +5,7 @@ const ReportedItem = () => {
     const [books, setBooks] = useState([])
     const[delt, setDelt] =useState(true);
     useEffect(()=>{
-        fetch('http://localhost:5000/reportedBooks',{
+        fetch('https://relic-book-server-soliman-soad.vercel.app/reportedBooks',{
           headers:{
             authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -15,7 +15,7 @@ const ReportedItem = () => {
     },[delt])
     console.log(books)
     const deleteBook = (id) => {
-        fetch(`http://localhost:5000/books/${id}`,{
+        fetch(`https://relic-book-server-soliman-soad.vercel.app/books/${id}`,{
       method:'DELETE'
     })
     .then(res => res.json())

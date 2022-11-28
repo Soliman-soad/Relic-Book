@@ -6,7 +6,7 @@ const Products = () => {
     const [books, setBooks] = useState([])
     const [category,setCategory] = useState('')
     useEffect(()=>{
-        fetch('http://localhost:5000/category',{
+        fetch('https://relic-book-server-soliman-soad.vercel.app/category',{
           headers:{
               authorization: `Bearer ${localStorage.getItem('token')}`
           }

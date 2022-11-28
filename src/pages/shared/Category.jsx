@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Category = () => {
     const [books, setBooks] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/category',{
+        fetch('https://relic-book-server-soliman-soad.vercel.app/category',{
             headers:{
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }

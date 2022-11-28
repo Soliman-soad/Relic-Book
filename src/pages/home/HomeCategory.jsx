@@ -6,7 +6,7 @@ const HomeCategory = () => {
     const [books, setBooks] = useState([])
     const {id} =useParams();
     useEffect(()=>{
-        fetch(`http://localhost:5000/booksCategory?id=${id}`)
+        fetch(`https://relic-book-server-soliman-soad.vercel.app/booksCategory?id=${id}`)
         .then(res=>res.json())
         .then(data => setBooks(data))
     },[id])
