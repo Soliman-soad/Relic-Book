@@ -40,8 +40,9 @@ const MyProduct = () => {
         })
         .then(res => res.json())
         .then(data=>{
-        console.log(data)})
-          navigate('/')
+        console.log(data)
+        navigate('/')
+      })
     }
     return (
         <div className="overflow-x-auto">
