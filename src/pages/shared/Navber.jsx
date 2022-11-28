@@ -28,7 +28,7 @@ const Navber = () => {
         </li>
         <li>
           <NavLink
-            to="/services"
+            to="/books"
             style={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
@@ -36,7 +36,7 @@ const Navber = () => {
             title="Our product"
             className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
           >
-            Services
+            Books
           </NavLink>
         </li>
         <li>

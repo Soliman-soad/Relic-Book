@@ -7,6 +7,7 @@ import ErrorPage from "../pages/Error/ErrorPage";
 import Home from "../pages/home/Home";
 import Main from "../pages/layout/Main";
 import Login from "../pages/Login/Login";
+import Products from "../pages/Products";
 import Profile from "../pages/Profile";
 import Register from "../pages/Register/Register";
 import AddProduct from "../pages/sellerPages/AddProduct";
@@ -32,9 +33,8 @@ const router = createBrowserRouter([
       },
       {
         path: "books",
-        element: <AllBooks />,
+        element: <Products />,
       },
-
       {
         path: "dashboard",
         element: <Dashboard />,

@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import BookCard from '../shared/BookCard';
 
-const AllBooks = () => {
+const AllBooks = ({category}) => {
     const [books, setBooks] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/books')
+        fetch(`http://localhost:5000/books?category=${category}`)
         .then(res=>res.json())
         .then(data => setBooks(data))
-    },[])
+    },[category])
     return (
-        <div className='my-48'>
+        <div>
             <div className=' text-center'>
-            <h1 className='text-3xl font-bold  uppercase'> buy book from here</h1>
+            <h1 className='text-3xl font-bold  uppercase'> buy {category} book from here</h1>
+            {
+                books.length===0 ? <p>No book found</p> : <p>book found : {books.length}</p>
+            }
             </div>
             <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 m-5'>
                 {
