@@ -3,7 +3,6 @@ import Dashboard from "../dashboard/Dashboard";
 import Buyers from "../pages/admin/Buyers";
 import ReportedItem from "../pages/admin/ReportedItem";
 import Sellers from "../pages/admin/Sellers";
-import AllBooks from "../pages/allBooks/AllBooks";
 import Blog from "../pages/Blog";
 import MyBuyingProduct from "../pages/buyerPage/MyBuyingProduct";
 import ErrorPage from "../pages/Error/ErrorPage";
@@ -17,6 +16,7 @@ import Profile from "../pages/Profile";
 import Register from "../pages/Register/Register";
 import AddProduct from "../pages/sellerPages/AddProduct";
 import MyProduct from "../pages/sellerPages/MyProduct";
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "dashboard",
-        element: <Dashboard />,
+        element: <PrivateRouter><Dashboard /></PrivateRouter>,
         children: [
           {
             path: "addProduct",
