@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 const Category = () => {
     const [books, setBooks] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/category')
+        fetch('http://localhost:5000/category',{
+            headers:{
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
         .then(res=>res.json())
         .then(data => setBooks(data))
     },[])

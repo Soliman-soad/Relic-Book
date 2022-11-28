@@ -5,7 +5,11 @@ const ReportedItem = () => {
     const [books, setBooks] = useState([])
     const[delt, setDelt] =useState(true);
     useEffect(()=>{
-        fetch('http://localhost:5000/reportedBooks')
+        fetch('http://localhost:5000/reportedBooks',{
+          headers:{
+            authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+        })
         .then(res=>res.json())
         .then(data => setBooks(data))
     },[delt])

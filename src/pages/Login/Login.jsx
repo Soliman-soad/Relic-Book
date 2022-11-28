@@ -3,11 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ProfileContext } from '../../context/UserContext';
 
 const Login = () => {
-	// useTitle('Login')
     const {logIn,popUpSignIn}=useContext(ProfileContext)
     const navigate = useNavigate()
 	const location = useLocation()
-  const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/';
     const [errorMessage, setErrorMessage] =useState(null)
 	const userData = (email,role) => {
 		const currentUser ={
@@ -35,22 +34,22 @@ const Login = () => {
         logIn(email,password)
         .then(result => {
             const user = result.user;
-			// const currentUser ={
-			// 	user: user.email
-			// }
-            // fetch('https://sidekick-server-soliman-soad.vercel.app/jwt',{
-			// 	method:'POST',
-			// 	headers:{
-			// 		'content-type':'application/json'
-			// 	},
-			// 	body: JSON.stringify(currentUser)
-			// })
-			// .then(res=> res.json())
-			// .then(data => {
-			// 	console.log(data)
-			// 	localStorage.setItem('token',data.token)
-			// 	navigate(from,{replace:true})
-			// })
+			const currentUser ={
+				user: user.email
+			}
+            fetch('http://localhost:5000/jwt',{
+				method:'POST',
+				headers:{
+					'content-type':'application/json'
+				},
+				body: JSON.stringify(currentUser)
+			})
+			.then(res=> res.json())
+			.then(data => {
+				console.log(data)
+				localStorage.setItem('token',data.token)
+				navigate(from,{replace:true})
+			})
 			console.log(user)
         })
         .catch(error => {
@@ -64,22 +63,22 @@ const Login = () => {
 		.then(result =>{
 			const user =result.user;
 			userData(user.email,"buyer")
-			// const currentUser ={
-			// 	user: user.email
-			// }
-			// fetch('https://sidekick-server-soliman-soad.vercel.app/jwt',{
-			// 	method:'POST',
-			// 	headers:{
-			// 		'content-type':'application/json'
-			// 	},
-			// 	body: JSON.stringify(currentUser)
-			// })
-			// .then(res=> res.json())
-			// .then(data => {
-			// 	console.log(data)
-			// 	localStorage.setItem('token',data.token)
-			// 	navigate(from,{replace:true})
-			// })
+			const currentUser ={
+				user: user.email
+			}
+			fetch('http://localhost:5000/jwt',{
+				method:'POST',
+				headers:{
+					'content-type':'application/json'
+				},
+				body: JSON.stringify(currentUser)
+			})
+			.then(res=> res.json())
+			.then(data => {
+				console.log(data)
+				localStorage.setItem('token',data.token)
+				navigate(from,{replace:true})
+			})
 			console.log(user)
 		})
 		.catch(error => console.log(error))

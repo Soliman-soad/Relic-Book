@@ -1,10 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ProfileContext } from "../../context/UserContext";
-// import { useTitle } from '../custom-Hooks/useTitle';
 
 const Register = () => {
-  // useTitle('Register')
   const { register, changeProfile, popUpSignIn } = useContext(ProfileContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -40,22 +38,22 @@ const Register = () => {
         const user = result.user;
         update(name, img);
         userData(email,role)
-        // const currentUser = {
-        //   user: user.email,
-        // };
-        // fetch("https://sidekick-server-soliman-soad.vercel.app/jwt", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(currentUser),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     console.log(data);
-        //     localStorage.setItem("token", data.token);
-        //     navigate(from, { replace: true });
-        //   });
+        const currentUser = {
+          user: user.email,
+        };
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("token", data.token);
+            navigate(from, { replace: true });
+          });
         console.log(user)
       })
       .catch((error) => {
@@ -74,22 +72,22 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         userData(user.email,"buyer")
-        // const currentUser = {
-        //   user: user.email,
-        // };
-        // fetch("https://sidekick-server-soliman-soad.vercel.app/jwt", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(currentUser),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     console.log(data);
-        //     localStorage.setItem("token", data.token);
-        //     navigate(from, { replace: true });
-        //   });
+        const currentUser = {
+          user: user.email,
+        };
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("token", data.token);
+            navigate(from, { replace: true });
+          });
         console.log(user)
       })
       .catch((error) => console.log(error));

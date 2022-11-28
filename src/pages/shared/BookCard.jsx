@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { ProfileContext } from '../../context/UserContext';
@@ -6,6 +6,14 @@ import { ProfileContext } from '../../context/UserContext';
 const BookCard = ({book}) => {
 	const {user} = useContext(ProfileContext)
   const navigate = useNavigate()
+  const [owner,setOwner] = useState([])
+  useEffect(()=>{
+    fetch(`http://localhost:5000/owner`)
+    .then(res=> res.json())
+    .then(data => setOwner(data))
+},[user])
+const current = owner.filter(cur => cur?.tick === true)
+console.log(current[0])
   const handleCart = (id) =>{
     const add = {
       user : user?.email
@@ -61,7 +69,7 @@ const BookCard = ({book}) => {
     <p><span className='font-bold '>Price: </span> ${book?.resellPrice}</p>
     <p><span className='font-bold '>Buying Price: </span> ${book?.oldPrice}</p>
     <p><span className='font-bold '>Used: </span> {book?.usedYear} months</p>
-    <p><span className='font-bold '>Seller name: </span>{book?.sellerName}</p>
+    <p><span className='font-bold '>Seller name: </span>{book?.sellerName} </p>
     <p className='text-gray-400'>{book?.posted}</p>
     {
       user?.email ?

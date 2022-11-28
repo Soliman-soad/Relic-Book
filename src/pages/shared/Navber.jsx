@@ -135,7 +135,7 @@ const Navber = () => {
 
         <h1 className='text-xl ml-2 font-bold uppercase text-sky-600'>Relic book</h1>
         </div>
-          <div className='hidden md:block'>
+          <div className='hidden lg:block'>
             <NavItem/>
           </div>
           <div className="lg:hidden">

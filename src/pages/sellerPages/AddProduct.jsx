@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ProfileContext } from '../../context/UserContext';
 const AddProduct = () => {
     const {user} = useContext(ProfileContext)
     const [category ,setCategory]= useState([])
+    const navigate = useNavigate()
     useEffect(()=>{
         fetch('http://localhost:5000/category')
         .then(res=>res.json())
@@ -59,7 +61,9 @@ const AddProduct = () => {
                 progress: undefined,
                 theme: "light",
                 });    
-            console.log(data)})
+            console.log(data)
+            navigate('/books')
+        })
             
     }        
 

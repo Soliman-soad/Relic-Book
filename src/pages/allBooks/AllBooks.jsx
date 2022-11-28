@@ -4,7 +4,11 @@ import BookCard from '../shared/BookCard';
 const AllBooks = ({category}) => {
     const [books, setBooks] = useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/books?category=${category}`)
+        fetch(`http://localhost:5000/books?category=${category}`,{
+            headers:{
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
         .then(res=>res.json())
         .then(data => setBooks(data))
     },[category])

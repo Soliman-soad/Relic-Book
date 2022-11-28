@@ -6,7 +6,11 @@ const Products = () => {
     const [books, setBooks] = useState([])
     const [category,setCategory] = useState('')
     useEffect(()=>{
-        fetch('http://localhost:5000/category')
+        fetch('http://localhost:5000/category',{
+          headers:{
+              authorization: `Bearer ${localStorage.getItem('token')}`
+          }
+      })
         .then(res=>res.json())
         .then(data => setBooks(data))
     },[])

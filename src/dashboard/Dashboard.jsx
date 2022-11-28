@@ -10,7 +10,11 @@ const Dashboard = () => {
     const email = user?.email
     console.log(email)
     useEffect(()=>{
-        fetch(`http://localhost:5000/user?email=${email}`)
+        fetch(`http://localhost:5000/user?email=${email}`,{
+            headers:{
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
         .then(res=> res.json())
         .then(data => setRole(data))
     },[email, user])

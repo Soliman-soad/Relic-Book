@@ -15,7 +15,9 @@ const CheckoutForm = ({bookData}) => {
 
     fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+         "Content-Type": "application/json"
+        },
       body: JSON.stringify({price }),
     })
       .then((res) => res.json())
@@ -23,23 +25,20 @@ const CheckoutForm = ({bookData}) => {
   }, [resellPrice]);
 
   const handleSubmit = async (event) => {
-    // Block native form submission.
+
     event.preventDefault();
 
     if (!stripe || !elements) {
       return;
     }
 
-    // Get a reference to a mounted CardElement. Elements knows how
-    // to find your CardElement because there can only ever be one of
-    // each type of element.
+    
     const card = elements.getElement(CardElement);
 
     if (card == null) {
       return;
     }
 
-    // Use your card Element with other Stripe.js APIs
     const {error, paymentMethod} = await stripe.createPaymentMethod({
       type: 'card',
       card,
