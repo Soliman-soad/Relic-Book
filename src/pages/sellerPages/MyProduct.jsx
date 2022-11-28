@@ -20,7 +20,7 @@ const MyProduct = () => {
   .then(res => res.json())
   .then(data =>{
     console.log(data);
-    toast.error('Review deleted')
+    toast.error('item deleted')
     setDelt(!delt)
   })
   }
