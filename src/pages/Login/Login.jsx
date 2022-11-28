@@ -84,7 +84,7 @@ const Login = () => {
                 <p>{errorMessage}</p>
 			</div>
 		</div>
-		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-teal-600 text-white font-bold">Sign in</button>
+		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-sky-600 text-white font-bold">Sign in</button>
 	</form>
 	<div className="flex items-center pt-4 space-x-1">
 		<div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>

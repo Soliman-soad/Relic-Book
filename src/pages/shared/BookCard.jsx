@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { ProfileContext } from '../../context/UserContext';
 
@@ -20,6 +20,24 @@ const BookCard = ({book}) => {
       });
       navigate('books')
   }
+  const handleReport = (id) => {
+    const add = {
+      reported : true
+    }
+    fetch(`http://localhost:5000/books/${id}`,{
+        method:'PATCH',
+        headers:{
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(add)
+      })
+      .then(res => res.json())
+      .then(data=>{
+      console.log(data)})
+        toast.error('reported')
+        navigate('/books')
+  
+  }
     return (
         <div className="card bg-base-100 shadow-xl">
   <figure><img src={book?.img} alt="Shoes" className='h-72'/></figure>
@@ -35,12 +53,16 @@ const BookCard = ({book}) => {
     <p><span className='font-bold '>Used: </span> {book?.usedYear} months</p>
     <p><span className='font-bold '>Seller name: </span>{book?.sellerName}</p>
     <p className='text-gray-400'>{book?.posted}</p>
-    <button className='btn bg-sky-600 border-none mt-2'><label htmlFor="my-modal-3" className="w-full" >Buy now</label></button>    
+    {
+      user?.email ?
+      <button  className='btn bg-sky-600 border-none mt-2'><label htmlFor="my-modal-5" className="w-full" >Buy now</label></button>  :  
+      <button  className='btn bg-sky-600 border-none mt-2'><Link to='/login' className="w-full" >Log in to buy</Link></button>    
+    }
   </div>
-  <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+  <input type="checkbox" id="my-modal-5" className="modal-toggle" />
 <div className="modal">
   <div className="modal-box relative">
-    <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+    <label htmlFor="my-modal-5" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
     <form onSubmit={handleRegister} className="space-y-6 p-10 ng-untouched ng-pristine ng-valid">
 		<div className="space-y-1 text-sm">
 			<label htmlFor='name' className='font-bold'>Name of Book</label>
@@ -68,9 +90,10 @@ const BookCard = ({book}) => {
 			<input type="text" name="location" id="location"  placeholder='Meeting location' className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
 		</div>
 		
-		
 		<button type='submit' className="block w-full p-3 text-center rounded-sm  bg-sky-600 text-white font-bold">Confirm</button>
+    
 	</form>
+		<button onClick={()=> handleReport(book?._id)} className="btn border-none block w-full p-3 text-center rounded-sm  bg-red-600 text-white font-bold">Report</button>
   </div>
 </div>
 </div>

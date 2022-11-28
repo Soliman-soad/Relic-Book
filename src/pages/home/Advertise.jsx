@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import BookCard from '../shared/BookCard';
-// import { useTitle } from '../custom-Hooks/useTitle';
+
 
 const Advertise = () => {
-    // useTitle('Services')
     const [books, setBooks] = useState([])
     useEffect(()=>{
         fetch('http://localhost:5000/advertiseBooks')
