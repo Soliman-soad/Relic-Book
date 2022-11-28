@@ -3,8 +3,10 @@ import Dashboard from "../dashboard/Dashboard";
 import Buyers from "../pages/admin/Buyers";
 import Sellers from "../pages/admin/Sellers";
 import AllBooks from "../pages/allBooks/AllBooks";
+import Blog from "../pages/Blog";
 import ErrorPage from "../pages/Error/ErrorPage";
 import Home from "../pages/home/Home";
+import HomeCategory from "../pages/home/HomeCategory";
 import Main from "../pages/layout/Main";
 import Login from "../pages/Login/Login";
 import Products from "../pages/Products";
@@ -33,7 +35,15 @@ const router = createBrowserRouter([
       },
       {
         path: "books",
-        element: <Products />,
+        element: <Products/>,
+      },
+      {
+        path:'category/:id',
+        element:<HomeCategory/>
+      },
+      {
+        path:'blog',
+        element:<Blog/>
       },
       {
         path: "dashboard",

@@ -39,32 +39,7 @@ const Navber = () => {
             Books
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="myReview"
-            style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
-            aria-label="Product pricing"
-            title="Product pricing"
-            className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
-          >
-            My Reviews
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/dashboard"
-            style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
-            aria-label="About us"
-            title="About us"
-            className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
-          >
-            Dashboard
-          </NavLink>
-        </li>
+        
         <li>
           <NavLink
             to="/blog"
@@ -78,9 +53,12 @@ const Navber = () => {
             Blog
           </NavLink>
         </li>
-        <li>
+        {
+            user?
+            <>
+            <li>
           <NavLink
-            to="/addService"
+            to="/dashboard"
             style={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
@@ -88,11 +66,9 @@ const Navber = () => {
             title="About us"
             className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
           >
-            Add service
+            Dashboard
           </NavLink>
         </li>
-        {
-            user?
             <li className='flex items-center'>
                 <div className="relative flex-shrink-0 mr-2">
         <span className="absolute bottom-0 right-0 w-4 h-4  dark:bg-green-600 border rounded-full dark:text-gray-100 "></span>
@@ -108,6 +84,7 @@ const Navber = () => {
           </button>
         
             </li>
+            </>            
              :
             <>
             <li>

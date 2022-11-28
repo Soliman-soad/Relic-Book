@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { ProfileContext } from '../../context/UserContext';
 
@@ -6,8 +7,9 @@ const MyProduct = () => {
     const {user} = useContext(ProfileContext)
     const [books, setBooks] = useState([])
     const[delt, setDelt] =useState(true);
+    const navigate = useNavigate()
     useEffect(()=>{
-        fetch('http://localhost:5000/books')
+        fetch('http://localhost:5000/myBooks')
         .then(res=>res.json())
         .then(data => setBooks(data))
     },[delt])
@@ -25,6 +27,22 @@ const MyProduct = () => {
     console.log(books)
     const product = books.filter(data => data?.email === user?.email)
     console.log(product)
+    const handleAdd = (id) =>{
+      const add = {
+        advertise : true
+      }
+      fetch(`http://localhost:5000/books/${id}`,{
+          method:'PATCH',
+          headers:{
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(add)
+        })
+        .then(res => res.json())
+        .then(data=>{
+        console.log(data)})
+          navigate('/')
+    }
     return (
         <div className="overflow-x-auto">
   <table className="table w-full">
@@ -52,7 +70,7 @@ const MyProduct = () => {
             <td>{p?.category}</td>
             <td>
                 <button className='btn border-none bg-red-600 text-white mr-3 ' onClick={()=> deleteBook(p._id)}> Delete</button>
-                <button className='btn border-none bg-orange-500 text-white '> Advertise</button>
+                <button className='btn border-none bg-orange-500 text-white' onClick={()=> handleAdd(p._id)}> Advertise</button>
             </td>
           </tr>)
       }
