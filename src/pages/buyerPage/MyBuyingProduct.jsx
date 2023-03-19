@@ -75,7 +75,7 @@ const MyBuyingProduct = () => {
               {
                 p?.payment ==='paid' ? <p>paid</p>
                 :
-               <Link to={`/dashboard/payment/${p?._id}`}><button className='btn border-none bg-sky-600 text-white mr-3 '> Puy now</button></Link> 
+               <Link to={`/dashboard/payment/${p?._id}`}><button className='btn border-none bg-sky-600 text-white mr-3 '> Buy now</button></Link> 
               }
                 
             </td>

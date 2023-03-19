@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import { ProfileContext } from '../../context/UserContext';
 
@@ -57,26 +57,32 @@ console.log(current[0])
     })
   }
     return (
-        <div className="card bg-base-100 shadow-xl">
-  <figure><img src={book?.img} alt="Shoes" className='h-72'/></figure>
-  <div className="card-body">
-    <h2 className="card-title">
-      {book?.name}
-      <div className="card-actions justify-end">
-      <div className="badge badge-outline">{book.category}</div> 
-    </div>
-    </h2>
-    <p><span className='font-bold '>Price: </span> ${book?.resellPrice}</p>
-    <p><span className='font-bold '>Buying Price: </span> ${book?.oldPrice}</p>
-    <p><span className='font-bold '>Used: </span> {book?.usedYear} months</p>
-    <p><span className='font-bold '>Seller name: </span>{book?.sellerName} </p>
-    <p className='text-gray-400'>{book?.posted}</p>
-    {
-      user?.email ?
-      <button  className='btn bg-sky-600 border-none mt-2'><label htmlFor={book._id} className="w-full" >Buy now</label></button>  :  
-      <button  className='btn bg-sky-600 border-none mt-2'><Link to='/login' className="w-full" >Log in to buy</Link></button>    
-    }
-  </div>
+        <div className="w-[380px] h-[400px] bg-base-100 shadow-xl mx-auto overflow-hidden">
+          <div className='h-full grid grid-cols-2 lg:grid-cols-6 hover:grid-cols-2 duration-0 transition-all ease-in duration-[2000ms] group'>
+          <div className='h-full group-hover:col-span-1 transition ease-in duration-[2000ms]'>
+          <img src={book?.img} className='h-full object-cover ' alt={book?.name}/>
+          </div>
+          <div className='lg:col-span-5 group-hover:col-span-1 transition ease-in duration-[2000ms]'>          
+            <div className="card-body">
+            <div className="border rounded-full text-center border-pink-600 text-sm text-pink-600">{book.category}</div> 
+              <h2 className="text-lg font-semibold mt-2">
+                {book?.name}
+              </h2>
+              <div className='my-4'>
+              <p><span className='font-semibold text-sm '>Price: </span> ${book?.resellPrice}</p>
+              <p><span className='font-semibold text-sm '>Buying Price: </span> ${book?.oldPrice}</p>
+              <p><span className='font-semibold text-sm '>Before: </span> {book?.usedYear} months ago</p>
+              <p><span className='font-semibold text-sm '>Seller name: </span>{book?.sellerName} </p>
+              </div>
+              <p className='text-gray-400 text-xs'>Posted: {(book?.posted).slice(0,10)}</p>
+              {
+                user?.email ?
+                <button  className='btn bg-sky-600 border-none mt-2'><label htmlFor={book._id} className="w-full" >Buy now</label></button>  :  
+                <button  className='btn bg-sky-600 border-none mt-2'><Link to='/login' className="w-full" >Log in to buy</Link></button>    
+              }
+            </div>
+          </div>
+          </div>          
   <input type="checkbox" id={book._id} className="modal-toggle" />
 <div className="modal">
   <div className="modal-box relative">
