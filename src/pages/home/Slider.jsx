@@ -15,7 +15,7 @@ const Slider = () => {
     return (
         <div className=" max-h-screen bg-base-200 px-5 py-3 md:py-2 md:px-1 ">
   <div className=" grid grid-cols-1 lg:grid-cols-2 items-center">
-  <div className='w-2/4 lg:w-full mx-auto'>
+  <div className='w-2/4 lg:w-10/12 mx-auto'>
   <Lottie options={defaultOptions}/>
   </div>
     <div className='text-center md:text-left w-full'>

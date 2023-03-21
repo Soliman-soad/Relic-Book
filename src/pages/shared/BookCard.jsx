@@ -57,7 +57,7 @@ console.log(current[0])
     })
   }
     return (
-        <div className="w-[380px] h-[400px] bg-base-100 shadow-xl mx-auto overflow-hidden">
+        <div className="w-[380px] h-[350px] rounded-md border bg-base-100 shadow-xl mx-auto overflow-hidden">
           <div className='h-full grid grid-cols-2 lg:grid-cols-6 hover:grid-cols-2 duration-0 transition-all ease-in duration-[2000ms] group'>
           <div className='h-full group-hover:col-span-1 transition ease-in duration-[2000ms]'>
           <img src={book?.img} className='h-full object-cover ' alt={book?.name}/>

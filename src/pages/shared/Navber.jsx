@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ProfileContext } from '../../context/UserContext';
 import { GiCardExchange } from "react-icons/gi";
+import userImg from "../../utitlity/user.jpg"
 
 const Navber = () => {
     let activeStyle = {
@@ -71,8 +72,8 @@ const Navber = () => {
         </li>
             <li className='flex items-center'>
                 <div className="relative flex-shrink-0 mr-2">
-        <span className="absolute bottom-0 right-0 w-4 h-4  dark:bg-green-600 border rounded-full dark:text-gray-100 "></span>
-        <img src={user.photoURL ? user.photoURL : 'https://cdn-icons-png.flaticon.com/512/180/180691.png?w=740&t=st=1667933376~exp=1667933976~hmac=1a461d2424fb0a79589d1208e23741588d5efd0930f0cb299ee072d62c7ca429'} alt="" className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700" />
+        <span className="absolute bottom-0 right-0 w-3 h-3  dark:bg-green-600 border rounded-full dark:text-gray-100 "></span>
+        <img src={user?.photoURL && user?.photoURL !== "" ? user.photoURL : userImg} alt="" className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700" />
     </div>      
           <button
             onClick={signOut}
