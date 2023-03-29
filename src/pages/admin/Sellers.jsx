@@ -61,7 +61,7 @@ console.log(sellers)
             <td>{p?.email}</td>
             <td>{p?.role}</td>
             <td>
-                <button className='btn border-none bg-red-600 text-white mx-5' onClick={()=>deleteUser(p._id)}> Delete</button>
+                <button className='btn border-none bg-red-600 text-white mr-5' onClick={()=>deleteUser(p._id)}> Delete</button>
                 {p?.tick ?
                   <button className='btn border-none bg-green-400' onClick={()=>{verify(p._id)}}> Verified</button>:
                   <button className='btn border-none bg-blue-500 text-white' onClick={()=>{verify(p._id)}}> Verify</button>}

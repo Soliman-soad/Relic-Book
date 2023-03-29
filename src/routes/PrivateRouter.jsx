@@ -7,7 +7,11 @@ const PrivateRouter = ({children}) => {
     const {user,loading} = useContext(ProfileContext);
     if(loading){
         // loader section
-        return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-sky-600"></div>
+        return (
+        <div className='flex min-h-screen justify-center items-center'>
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-sky-600"></div>
+        </div>
+        )
     }
     if (user && user.uid){
         return children;

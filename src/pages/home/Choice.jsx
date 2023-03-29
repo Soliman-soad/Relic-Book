@@ -28,7 +28,7 @@ const Choice = () => {
                 <div className="text-4xl mb-4 group-hover:animate-bounce"><RiUserVoiceFill/></div>
                 <div>
                 <h2 className="text-xl uppercase"> Sell now</h2>
-                <p className="font-medium">you can sell easily</p>
+                <p className="font-medium">It is easy to sell your book just click here.</p>
                 </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ const Choice = () => {
                 <div className="text-4xl mb-4 group-hover:animate-bounce"><GiBuyCard/></div>
                 <div>
                 <h2 className="text-xl uppercase"> Buy now</h2>
-                <p className="font-medium">you can buy easily</p>
+                <p className="font-medium">Click here to search book.</p>
                 </div>
             </div>
           </div>

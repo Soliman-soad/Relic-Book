@@ -70,7 +70,7 @@ const MyBuyingProduct = () => {
 </div> </td>
             <td>{p?.name}</td>
             <td>{p?.category}</td>
-            <td>{p?.Price}</td>
+            <td>{p?.price}</td>
             <td>
               {
                 p?.payment ==='paid' ? <p>paid</p>

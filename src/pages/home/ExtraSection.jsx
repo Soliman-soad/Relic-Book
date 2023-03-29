@@ -1,11 +1,11 @@
 import React from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import Map from './Map';
+
 
 const ExtraSection = () => {
-  const position = [51.505, -0.09]
+  const position = [23.810331, 90.412521]
   return (
-      <section className="text-gray-600 body-font relative mb-16 shadow-lg">
+      <section className="text-gray-600 body-font relative">
       <div className="absolute -z-50 inset-0 bg-gray-300">
       <MapContainer style={{ width: "100%", height: "100%" }} center={position} zoom={13} scrollWheelZoom={false}>
     <TileLayer
@@ -14,7 +14,7 @@ const ExtraSection = () => {
     />
     <Marker position={position}>
       <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
+       Md soliman can <br /> Easily customizable.
       </Popup>
     </Marker>
   </MapContainer>

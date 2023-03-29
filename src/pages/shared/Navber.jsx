@@ -12,7 +12,7 @@ const Navber = () => {
         borderRadius: '8px'
       };
     const NavItem = () => {
-        return <ul className="flex flex-col md:items-center sm:gap-2 md:space-x-8 md:flex-row">
+        return <ul className="flex flex-col md:items-center sm:gap-2 md:space-x-8 md:flex-row ">
         <li>
           <NavLink
             to="/"
@@ -126,7 +126,7 @@ const Navber = () => {
         .catch(err=>console.log(err))
     }
   return (
-    <div >
+    <div className=" border-b">
       <div className="px-14 py-5 w-full bg-white shadow-lg">
         <div className="relative flex items-center justify-between">
         <div className='flex items-center text-sky-400'>

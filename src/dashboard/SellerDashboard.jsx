@@ -8,7 +8,7 @@ const SellerDashboard = () => {
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content">
     
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 lg:hidden">
   <div className="flex-1 lg:hidden">
     <h1 className="btn btn-ghost normal-case text-xl">Dashboard</h1>
   </div>

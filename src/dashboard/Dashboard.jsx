@@ -22,19 +22,25 @@ const Dashboard = () => {
     if(role[0]?.role==='admin'){
 
         return (
-            <AdminDashboard/>
+            <div >
+                <AdminDashboard/>
+            </div>
         );
     }
     if(role[0]?.role==='seller'){
 
         return (
-            <SellerDashboard/>
+            <div >
+                <SellerDashboard/>
+            </div>
         );
     }
     if(role[0]?.role==='buyer'){
 
         return (
-            <BuyerDashboard/>
+            <div >
+                <BuyerDashboard/>
+            </div>
         );
     }
 };

@@ -20,9 +20,9 @@ const Profile = () => {
     console.log(user)
     return (
         <div>
-            <div className="w-full h-screen p-8 flex flex-col md:flex-row  sm:space-x-6 ">
+            <div className="w-full max-h-screen p-8 flex flex-col md:flex-row  sm:space-x-6 ">
 	<div className="w-5/12 ">
-		<img src={user?.photoURL===null ? "https://img.freepik.com/free-vector/illustrated-man-with-social-media_53876-26710.jpg?w=740&t=st=1667967886~exp=1667968486~hmac=598801c588d43a5b616530d421dd2bb45698e44965f4c7f73e938082cd79efa8" :user?.photoURL } alt="" className="object-cover object-center w-full h-full rounded dark:bg-gray-500" />
+		<img src={user?.photoURL===null ? "https://img.freepik.com/free-vector/illustrated-man-with-social-media_53876-26710.jpg?w=740&t=st=1667967886~exp=1667968486~hmac=598801c588d43a5b616530d421dd2bb45698e44965f4c7f73e938082cd79efa8" :user?.photoURL } alt="" className="object-cover object-center w-[300px] h-[340px] rounded dark:bg-gray-500" />
 	</div>
 	<div className="flex flex-col space-y-4">
 		<div>
