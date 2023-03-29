@@ -30,7 +30,7 @@ const AllBooks = ({category}) => {
 
     if(!change){
         return(
-            <div className='md:grid grid-cols-e'>
+            <div className='md:grid '>
                 
                 <div className='col-span-3 md:grid grid-cols-3'>
                 <div className="flex flex-col m-8 rounded shadow-md w-60 sm:w-80 animate-pulse h-96">

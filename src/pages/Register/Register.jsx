@@ -93,9 +93,9 @@ const Register = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div>
+    <div className='bg-slate-100 h-full py-10'>
       <div className=" mx-auto items-center rounded-md ">
-        <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto shadow-lg mt-10">
+        <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto shadow-lg bg-white">
           <h1 className="text-2xl font-bold text-center text-gray-900">
             Register
           </h1>

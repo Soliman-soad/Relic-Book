@@ -73,7 +73,7 @@ const Navber = () => {
             <li className='flex items-center'>
                 <div className="relative flex-shrink-0 mr-2">
         <span className="absolute bottom-0 right-0 w-3 h-3  dark:bg-green-600 border rounded-full dark:text-gray-100 "></span>
-        <img src={user?.photoURL && user?.photoURL !== "" ? user.photoURL : userImg} alt="" className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700" />
+        <img src={user?.photoURL  ? user.photoURL : userImg} alt="" className="w-10 h-10 border rounded-full dark:bg-gray-500 dark:border-gray-700 object-cover" />
     </div>      
           <button
             onClick={signOut}

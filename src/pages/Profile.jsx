@@ -13,7 +13,7 @@ const Profile = () => {
         changeProfile(name,img)
         .then(()=>{
             console.log(user)
-            navigate('/profile')
+            navigate('/dashboard')
         })
         .catch(error => console.log(error))
     }
@@ -21,7 +21,7 @@ const Profile = () => {
     return (
         <div>
             <div className="w-full max-h-screen p-8 flex flex-col md:flex-row  sm:space-x-6 ">
-	<div className="w-5/12 ">
+	<div className="md:w-5/12 w-10/12">
 		<img src={user?.photoURL===null ? "https://img.freepik.com/free-vector/illustrated-man-with-social-media_53876-26710.jpg?w=740&t=st=1667967886~exp=1667968486~hmac=598801c588d43a5b616530d421dd2bb45698e44965f4c7f73e938082cd79efa8" :user?.photoURL } alt="" className="object-cover object-center w-[300px] h-[340px] rounded dark:bg-gray-500" />
 	</div>
 	<div className="flex flex-col space-y-4">
@@ -39,11 +39,11 @@ const Profile = () => {
             <form onSubmit={handleChange} className='mx-auto'>
             <div className="space-y-2">
 				<label htmlFor="name" className="block text-sm">Full Name</label>
-				<input type="text" name="name" id="name" placeholder="Change name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-white dark:text-gray-100 focus:dark:border-violet-400" />
+				<input type="text" name="name" id="name" placeholder="Change name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-white dark:text-gray-900 focus:dark:border-violet-400" />
 			</div>
 			<div className="space-y-2">
 				<label htmlFor="img" className="block text-sm">Image url</label>
-				<input type="text" name="img" id="img" placeholder={user?.photoURL ===null ? 'default' : user?.photoURL} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-white dark:text-gray-100 focus:dark:border-violet-400" />
+				<input type="text" name="img" id="img" placeholder={user?.photoURL ===null ? 'default' : user?.photoURL} className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-white dark:text-gray-900 focus:dark:border-violet-400" />
 			</div>
             <button type="submit" className="w-full px-8 mt-5 py-3 font-semibold rounded-md bg-blue-500 text-white">Update profile</button>
             </form>

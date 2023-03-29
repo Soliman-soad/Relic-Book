@@ -84,9 +84,12 @@ const Login = () => {
 		.catch(error => console.log(error))
 	}
     return (
-        <div >
-      <div className='mx-auto items-center rounded-md'>
-      <div className="w-full max-w-md p-8 space-y-3 rounded-xl mx-auto shadow-lg mt-10">
+        <div  >
+      <div className='mx-auto max-w-md bg-white relative items-center rounded-md group'>
+		<div className='bg-gradient-to-r from-cyan-500 to-sky-500 absolute w-full h-full -z-10 rotate-[8deg] rounded-xl group-hover:rotate-1 transition ease-in duration-300 hidden md:block'>
+
+		</div>
+      <div className="w-full max-w-md  p-8 space-y-3 rounded-xl mx-auto shadow-lg mt-10 border group">
 	<h1 className="text-2xl font-bold text-center text-gray-900">Login</h1>
 	<form onSubmit={handleLogIn} className="space-y-6 ng-untouched ng-pristine ng-valid">
 		

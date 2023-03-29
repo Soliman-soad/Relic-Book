@@ -83,7 +83,7 @@ const AddProduct = () => {
 			<input type="text" name="seller" id="seller" required defaultValue={user?.displayName} className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
 		</div>
 		<div className="space-y-1 text-sm">
-			<input type="number" name="contact" id="contact" required placeholder='Enter your number' className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
+			<input type="tel" name="contact" id="contact" required placeholder='Enter your number' className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
 		</div>
 		<div className="space-y-1 text-sm">
 			<input type="text" name="price" id="price" required placeholder="Buying price" className="w-full px-4 py-3 rounded-md border-gray-700 dark:bg-gray-200 text-gray-900 " />
